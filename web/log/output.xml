@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20201114 22:59:04.796" rpa="false">
-<suite id="s1" name="Tests" source="C:\QA Ninja\robot-framework\web\tests">
-<suite id="s1-s1" name="Checkbox" source="C:\QA Ninja\robot-framework\web\tests\checkbox.robot">
-<test id="s1-s1-t1" name="Marcando opção com Id">
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20201115 18:08:51.283" rpa="false">
+<suite id="s1" name="Login Form" source="C:\QA Ninja\robot-framework\web\tests\login_form.robot">
+<test id="s1-t1" name="Login com sucesso">
 <kw name="Nova sessão" library="base" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -10,212 +9,78 @@
 <arg>${url}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20201114 22:59:05.022" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20201114 22:59:05.021" endtime="20201114 22:59:11.644"></status>
+<msg timestamp="20201115 18:08:51.530" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
+<status status="PASS" starttime="20201115 18:08:51.530" endtime="20201115 18:08:58.076"></status>
 </kw>
-<status status="PASS" starttime="20201114 22:59:05.021" endtime="20201114 22:59:11.644"></status>
+<status status="PASS" starttime="20201115 18:08:51.530" endtime="20201115 18:08:58.078"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
-<arg>${url}/checkboxes</arg>
+<arg>${url}/login</arg>
 </arguments>
-<msg timestamp="20201114 22:59:11.646" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com//checkboxes'</msg>
-<status status="PASS" starttime="20201114 22:59:11.645" endtime="20201114 22:59:12.357"></status>
+<msg timestamp="20201115 18:08:58.081" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com//login'</msg>
+<status status="PASS" starttime="20201115 18:08:58.080" endtime="20201115 18:08:58.635"></status>
 </kw>
-<kw name="Select Checkbox" library="SeleniumLibrary">
-<doc>Selects the checkbox identified by ``locator``.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>${check_thor}</arg>
+<arg>css:input[name=username]</arg>
+<arg>stark</arg>
 </arguments>
-<msg timestamp="20201114 22:59:12.358" level="INFO">Selecting checkbox 'id:thor'.</msg>
-<status status="PASS" starttime="20201114 22:59:12.358" endtime="20201114 22:59:12.473"></status>
+<msg timestamp="20201115 18:08:58.636" level="INFO">Typing text 'stark' into text field 'css:input[name=username]'.</msg>
+<status status="PASS" starttime="20201115 18:08:58.636" endtime="20201115 18:08:58.739"></status>
 </kw>
-<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
-<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
-<arg>${check_thor}</arg>
+<arg>css:input[name=password]</arg>
+<arg>jarvis!</arg>
 </arguments>
-<msg timestamp="20201114 22:59:12.474" level="INFO">Verifying checkbox 'id:thor' is selected.</msg>
-<status status="PASS" starttime="20201114 22:59:12.474" endtime="20201114 22:59:12.504"></status>
+<msg timestamp="20201115 18:08:58.740" level="INFO">Typing text 'jarvis!' into text field 'css:input[name=password]'.</msg>
+<status status="PASS" starttime="20201115 18:08:58.740" endtime="20201115 18:08:58.851"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="login"]/button/i</arg>
+</arguments>
+<msg timestamp="20201115 18:08:58.852" level="INFO">Clicking element 'xpath://*[@id="login"]/button/i'.</msg>
+<status status="PASS" starttime="20201115 18:08:58.852" endtime="20201115 18:08:59.490"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Olá, Tony Stark. Você acessou a área logada!</arg>
+</arguments>
+<msg timestamp="20201115 18:08:59.546" level="INFO">Current page contains text 'Olá, Tony Stark. Você acessou a área logada!'.</msg>
+<status status="PASS" starttime="20201115 18:08:59.492" endtime="20201115 18:08:59.546"></status>
 </kw>
 <kw name="Encerra sessão" library="base" type="teardown">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20201114 22:59:12.965" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201114 22:59:12.506" endtime="20201114 22:59:12.966"></status>
+<msg timestamp="20201115 18:09:00.112" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201115 18:08:59.550" endtime="20201115 18:09:00.112"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20201114 22:59:12.966" endtime="20201114 22:59:15.280"></status>
+<status status="PASS" starttime="20201115 18:09:00.112" endtime="20201115 18:09:02.237"></status>
 </kw>
-<status status="PASS" starttime="20201114 22:59:12.505" endtime="20201114 22:59:15.280"></status>
+<status status="PASS" starttime="20201115 18:08:59.549" endtime="20201115 18:09:02.237"></status>
 </kw>
-<status status="PASS" starttime="20201114 22:59:05.020" endtime="20201114 22:59:15.282" critical="yes"></status>
+<status status="PASS" starttime="20201115 18:08:51.530" endtime="20201115 18:09:02.237" critical="yes"></status>
 </test>
-<test id="s1-s1-t2" name="Marcando opção com CSS Selector">
-<kw name="Nova sessão" library="base" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>${url}</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20201114 22:59:15.294" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20201114 22:59:15.293" endtime="20201114 22:59:22.098"></status>
-</kw>
-<status status="PASS" starttime="20201114 22:59:15.292" endtime="20201114 22:59:22.099"></status>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${url}/checkboxes</arg>
-</arguments>
-<msg timestamp="20201114 22:59:22.101" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com//checkboxes'</msg>
-<status status="PASS" starttime="20201114 22:59:22.100" endtime="20201114 22:59:22.622"></status>
-</kw>
-<kw name="Select Checkbox" library="SeleniumLibrary">
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<arguments>
-<arg>${check_iron}</arg>
-</arguments>
-<msg timestamp="20201114 22:59:22.623" level="INFO">Selecting checkbox 'css:input[value='iron-man']'.</msg>
-<status status="PASS" starttime="20201114 22:59:22.623" endtime="20201114 22:59:22.725"></status>
-</kw>
-<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
-<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<arguments>
-<arg>${check_iron}</arg>
-</arguments>
-<msg timestamp="20201114 22:59:22.726" level="INFO">Verifying checkbox 'css:input[value='iron-man']' is selected.</msg>
-<status status="PASS" starttime="20201114 22:59:22.725" endtime="20201114 22:59:22.754"></status>
-</kw>
-<kw name="Encerra sessão" library="base" type="teardown">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20201114 22:59:23.068" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201114 22:59:22.755" endtime="20201114 22:59:23.068"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20201114 22:59:23.068" endtime="20201114 22:59:25.347"></status>
-</kw>
-<status status="PASS" starttime="20201114 22:59:22.755" endtime="20201114 22:59:25.347"></status>
-</kw>
-<tags>
-<tag>iron</tag>
-</tags>
-<status status="PASS" starttime="20201114 22:59:15.289" endtime="20201114 22:59:25.348" critical="yes"></status>
-</test>
-<test id="s1-s1-t3" name="Marcando opção com Xpath">
-<kw name="Nova sessão" library="base" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>${url}</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20201114 22:59:25.352" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20201114 22:59:25.352" endtime="20201114 22:59:32.495"></status>
-</kw>
-<status status="PASS" starttime="20201114 22:59:25.352" endtime="20201114 22:59:32.495"></status>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${url}/checkboxes</arg>
-</arguments>
-<msg timestamp="20201114 22:59:32.500" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com//checkboxes'</msg>
-<status status="PASS" starttime="20201114 22:59:32.498" endtime="20201114 22:59:33.091"></status>
-</kw>
-<kw name="Select Checkbox" library="SeleniumLibrary">
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<arguments>
-<arg>${check_pantera}</arg>
-</arguments>
-<msg timestamp="20201114 22:59:33.093" level="INFO">Selecting checkbox 'xpath://*[@id='checkboxes']/input[7]'.</msg>
-<status status="PASS" starttime="20201114 22:59:33.092" endtime="20201114 22:59:33.211"></status>
-</kw>
-<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
-<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
-<arguments>
-<arg>${check_pantera}</arg>
-</arguments>
-<msg timestamp="20201114 22:59:33.215" level="INFO">Verifying checkbox 'xpath://*[@id='checkboxes']/input[7]' is selected.</msg>
-<status status="PASS" starttime="20201114 22:59:33.213" endtime="20201114 22:59:33.255"></status>
-</kw>
-<kw name="Encerra sessão" library="base" type="teardown">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20201114 22:59:33.604" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201114 22:59:33.257" endtime="20201114 22:59:33.604"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20201114 22:59:33.604" endtime="20201114 22:59:35.748"></status>
-</kw>
-<status status="PASS" starttime="20201114 22:59:33.256" endtime="20201114 22:59:35.749"></status>
-</kw>
-<tags>
-<tag>pantera</tag>
-</tags>
-<status status="PASS" starttime="20201114 22:59:25.351" endtime="20201114 22:59:35.750" critical="yes"></status>
-</test>
-<status status="PASS" starttime="20201114 22:59:04.825" endtime="20201114 22:59:35.760"></status>
-</suite>
-<suite id="s1-s2" name="Title" source="C:\QA Ninja\robot-framework\web\tests\title.robot">
-<test id="s1-s2-t1" name="Deve validar o Tiulo">
-<kw name="Nova sessão" library="base" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>${url}</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20201114 22:59:35.821" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com/'.</msg>
-<status status="PASS" starttime="20201114 22:59:35.819" endtime="20201114 22:59:42.993"></status>
-</kw>
-<status status="PASS" starttime="20201114 22:59:35.817" endtime="20201114 22:59:42.996"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that the current page title equals ``title``.</doc>
-<arguments>
-<arg>Training Wheels Protocol</arg>
-</arguments>
-<msg timestamp="20201114 22:59:43.031" level="INFO">Page title is 'Training Wheels Protocol'.</msg>
-<status status="PASS" starttime="20201114 22:59:43.004" endtime="20201114 22:59:43.032"></status>
-</kw>
-<kw name="Encerra sessão" library="base" type="teardown">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20201114 22:59:43.489" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20201114 22:59:43.037" endtime="20201114 22:59:43.489"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20201114 22:59:43.489" endtime="20201114 22:59:46.266"></status>
-</kw>
-<status status="PASS" starttime="20201114 22:59:43.034" endtime="20201114 22:59:46.266"></status>
-</kw>
-<status status="PASS" starttime="20201114 22:59:35.812" endtime="20201114 22:59:46.268" critical="yes"></status>
-</test>
-<status status="PASS" starttime="20201114 22:59:35.777" endtime="20201114 22:59:46.275"></status>
-</suite>
-<status status="PASS" starttime="20201114 22:59:04.798" endtime="20201114 22:59:46.287"></status>
+<status status="PASS" starttime="20201115 18:08:51.283" endtime="20201115 18:09:02.237"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0">Critical Tests</stat>
-<stat pass="4" fail="0">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">iron</stat>
-<stat pass="1" fail="0">pantera</stat>
 </tag>
 <suite>
-<stat pass="4" fail="0" id="s1" name="Tests">Tests</stat>
-<stat pass="3" fail="0" id="s1-s1" name="Checkbox">Tests.Checkbox</stat>
-<stat pass="1" fail="0" id="s1-s2" name="Title">Tests.Title</stat>
+<stat pass="1" fail="0" id="s1" name="Login Form">Login Form</stat>
 </suite>
 </statistics>
 <errors>
